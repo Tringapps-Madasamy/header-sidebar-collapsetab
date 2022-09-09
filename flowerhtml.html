@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>flowers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .header {
+            background-color: FF99FF;
+            border: 5px outset #E8E8E8;
+            text-align: center;
+            padding: 20px;
+            margin: 30px 15px 30px 15px;
+        }
+
+        .sidebar {
+            background-color: FF99FF;
+            border: 5px outset #E8E8E8;
+            text-align: center;
+            position: fixed;
+            width: 30%;
+            height: 60%;
+            margin: 30px 1050px 20px 15px;
+        }
+
+        .content {
+            background-color: FF99FF;
+            border: 5px outset #E8E8E8;
+            height: 60%;
+            width: 50%;
+            overflow: hidden;
+            margin: 60px 15px 30px 45%;
+            overflow-y: scroll;
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .collapse {
+            background-color: rgba(255, 99, 71, 0.2);
+            border: 5px outset #E8E8E8;
+            font-size: 16;
+            text-align: left;
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+        }
+
+        button.collapse:hover {
+            background-color: beige;
+        }
+
+        .detail {
+            display: none;
+            font-size: 18;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .sidebar {
+                background-color: lightblue;
+                position: relative;
+                width: 88%;
+                height: 20%;
+                margin: 2% 500px 20px 15px;
+                overflow: hidden;
+            }
+
+            .content {
+                background-color: lightcoral;
+                position: relative;
+                height: 40%;
+                width: 88%;
+                top: 5%;
+                overflow: hidden;
+                margin: 10px 500px 20px 15px;
+                overflow-y: scroll;
+            }
+
+            .content::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body background="backimg.jpg">
+    <div class="header">
+        <h1>FLOWERS</h1>
+    </div>
+    <div class="sidebar">
+        <h4>This is side bar</h4>
+    </div>
+    <div class="content">
+        <button class="collapse">Why the flower is so beautiful in the world?</button>
+        <div class="detail">
+            <p>"The features that we appreciate are cues to pollinators that there are rewards to be found
+                in the flower." Scent, color, and size all attract a diversity of pollinators, which
+                include thousands of species of bees, wasps, butterflies, moths, and beetles, as well as
+                vertebrates such as birds and bats.</p>
+        </div>
+        <button class="collapse">Why do we love the flowers so much?</button>
+        <div class="detail">
+            <p>Flowers are thus connected to a positive, emotional environment for optimal psychological—and
+                from this, physical—health.We tend flowers as we tend loved ones. The aesthetic
+                experience becomes socially embedded and relational.</p>
+        </div>
+        <button class="collapse">What happens to the flowers in spring?</button>
+        <div class="detail">
+            <p>In spring, plants and trees sprout new leaves and Flowers bloom. The number
+                of daylight hours increases during spring, and in many countries, people
+                celebrate spring festivals.
+                Many different species of Spring Flowers grow from bulbs.</p>
+        </div>
+    </div>
+    <script>
+        var drop = document.getElementsByClassName("collapse");
+        var i;
+        for (i = 0; i < drop.length; i++) {
+            drop[i].addEventListener("click", function () {
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                }
+                else {
+                    content.style.display = "block";
+                }
+
+            });
+        }
+    </script>
+
+</body>
+
+</html>
